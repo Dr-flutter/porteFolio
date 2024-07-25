@@ -485,6 +485,9 @@ article.active {
 
 .about .article-title { margin-bottom: 15px; }
 
+
+.about { margin-bottom: 50px; }
+
 .about-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
@@ -753,7 +756,9 @@ article.active {
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
-
+.resume{
+  margin-bottom: 50px; 
+}
 
 /**
  * education and experience 
@@ -823,7 +828,6 @@ article.active {
  */
 
 .skills-title { margin-bottom: 20px; }
-
 .skills-list { padding: 20px; }
 
 
@@ -1129,7 +1133,7 @@ article.active {
   filter: grayscale(1) invert(1);
 }
 
-.contact-form { margin-bottom: 10px; }
+.contact-form { margin-bottom: 50px; }
 
 .form-title { margin-bottom: 20px; }
 
@@ -1468,7 +1472,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     scroll-padding-inline: 45px;
   }
 
-  .clients-item { min-width: calc(33.33% - 35px); }
+  .clients-item { min-width: calc(33.33% - 35px);
+  
+  }
 
 
 
