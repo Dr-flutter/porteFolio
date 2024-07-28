@@ -23,6 +23,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    .title{
+      display: flex;
+    }
+
+
+#typed-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+  </style>
 </head>
 
 <body>
@@ -46,9 +65,13 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="ibrahim youssouf">IBRAHIM YOUSSOUF </h1>
-
-          <p class="title">Web dev developer</p>
+          <h1 class="name" title="ibrahim youssouf">IBRAHIM YOUSSOUF</h1>
+   
+             <p class="title" style="font-size: 13px;" >
+              <span id="typed-text" >
+              </span>&nbsp; Developer
+              
+            </p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -1171,7 +1194,45 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
 
+    
+    const typedTextSpan = document.querySelector("#typed-text");
+    const textArray = ["Software","Junior","Fullstack Web","Freelancer" ];
+    const typingDelay = 200;
+    const erasingDelay = 100;
+    const newTextDelay = 1000;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        setTimeout(erase, newTextDelay);
+      }
+    }
+    
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        textArrayIndex++;
+        if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 80);
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(type, newTextDelay + 10);
+    });
+    
+    
+       </script>
 </body>
 
 </html>
